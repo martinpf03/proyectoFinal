@@ -1,28 +1,39 @@
 FROM php:8.2-cli
 
+# Instalar dependencias del sistema + Node (para Vite)
 RUN apt-get update && apt-get install -y \
-    git unzip curl libpq-dev libzip-dev zip
+    git unzip curl libpq-dev libzip-dev zip nodejs npm
 
+# Extensiones PHP necesarias
 RUN docker-php-ext-install pdo pdo_pgsql zip
 
+# Instalar Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Carpeta de trabajo
 WORKDIR /var/www
 
+# Copiar proyecto
 COPY . .
 
-# 🔥 Crear .env
+# 🔥 Crear .env (Laravel lo necesita)
 RUN cp .env.example .env
 
-# Instalar Laravel
+# Instalar dependencias PHP
 RUN composer install --no-dev --optimize-autoloader
+
+# 🔥 Instalar y compilar frontend (Vite)
+RUN npm install
+RUN npm run build
 
 # Permisos
 RUN chmod -R 775 storage bootstrap/cache
 
-# Limpiar cache viejo
+# Limpiar caches antiguos
 RUN rm -f bootstrap/cache/*.php
 
+# Exponer puerto de Render
 EXPOSE 10000
 
+# Comando de arranque
 CMD php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php -S 0.0.0.0:10000 -t public
