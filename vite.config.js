@@ -6,7 +6,6 @@ export default defineConfig({
         laravel({
             input: [
                 '/resources/css/app.css',
-                '/resources/js/app.js',
                 '/resources/css/header.css',
                 '/resources/css/footer.css',
                 '/resources/css/formProd.css',
@@ -25,6 +24,9 @@ export default defineConfig({
                 '/resources/css/subastas.css',
                 '/resources/css/tabla.css',
                 '/resources/css/terms.css',
+                '/resources/js/app.js',
+                '/resources/js/bootstrap.js',
+                '/resources/js/menu.js',
             ],
             refresh: true,
         }),
