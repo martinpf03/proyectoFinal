@@ -1,0 +1,104 @@
+/* Restablece márgenes y rellenos a cero, y asegura un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define la fuente personalizada 'arcade1' con un archivo TTF */
+@font-face {
+    font-family: 'arcade1'; /* Nombre que usarás en el CSS */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta a tu archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+    color: white; /* Color del texto */
+    font-family: 'Tahoma'; /* Fuente por defecto */
+    display: flex; /* Usa flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en columna */
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente */
+}
+
+
+/* Estilo para el título principal */
+h1 {
+    margin: 0; /* Elimina márgenes */
+    font-family: 'arcade1'; /* Usa la fuente arcade1 */
+    font-size: 24px; /* Ajuste del tamaño de fuente */
+}
+
+/* Estilo para el ícono de perfil */
+.profile-icon {
+    border: 1 solid black; /* Borde negro alrededor del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* El cursor cambia cuando pasa sobre el ícono */
+}
+
+/* Color del ícono dentro del perfil */
+.profile-icon i {
+    color: #ffffff; /* Color blanco para el ícono */
+}
+
+/* Estilo para el ícono de menú */
+.menu-icon {
+    border: 1 solid black; /* Borde alrededor del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor sobre el ícono */
+}
+
+/* Estilo para el menú con cuadrícula */
+#menu {
+    display: grid; /* Usamos una cuadrícula para organizar los elementos */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    padding: 10px; /* Espaciado alrededor del menú */
+    grid-column-gap: 20px; /* Espaciado entre columnas */
+}
+
+/* Estilo para la banda inicial */
+#bandaInicial {
+    font-family: arcade1; /* Fuente arcade1 */
+    height: 15vh; /* Altura del 15% de la pantalla */
+    width: 100%; /* Ancho completo */
+    background-color: black; /* Fondo negro */
+    padding: 20px; /* Espaciado interior */
+}
+
+/* Estilos para el contenido principal */
+#content {
+    flex: 1; /* Se expande para ocupar el espacio disponible */
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interior */
+    display: grid; /* Usa una cuadrícula */
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual tamaño */
+    column-gap: 40px; /* Espaciado entre las columnas */
+    row-gap: 60px; /* Espaciado entre las filas */
+}
+
+/* Estilo para el contenedor de cada producto */
+.divProducto {
+    background-color: black; /* Fondo negro */
+    border-radius: 20px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo */
+    height: 400px; /* Altura fija */
+    display: flex; /* Usa flexbox para organizar los elementos */
+    flex-direction: column; /* Organiza los elementos en columna */
+    padding: 10px; /* Espaciado interior */
+}
+
+/* Efecto al pasar el mouse sobre un producto */
+.divProducto:hover {
+    transform: scale(1.01); /* Hace que el producto crezca ligeramente */
+    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+
+/* Estilos para la imagen del producto */
+.imgProd {
+    height: 60%; /* Altura del 60% del contenedor */
+    width: 100%; /* Ancho completo */
+    border-radius: 20px; /* Bordes redondeados */
+    margin-bottom: 5px; /* Espaciado inferior */
+    object-fit: contain; /* Ajusta la imagen para que no se distorsione */
+}

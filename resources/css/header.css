@@ -1,0 +1,10 @@
+/* Estilo para el encabezado: espacio entre los elementos */
+header {
+    display: flex;
+    font-family: 'arcade1', sans-serif; /* Usa la fuente 'arcade1' */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Alineación vertical centrada */
+    width: 100%;
+    max-width: 100vw; /* Limita el ancho máximo */
+    height: 10vh; /* Altura del encabezado */
+}

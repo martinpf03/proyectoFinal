@@ -1,0 +1,76 @@
+/* Estilo para el menú lateral */
+.menu-lateral {
+    position: fixed; /* Fija el menú al lado */
+    top: 0;
+    right: -20%; /* Inicialmente fuera de la pantalla */
+    width: 20%; /* Ancho del menú */
+    height: 100%; /* Alto completo */
+    background-color: black; /* Fondo negro */
+    transition: right 0.3s ease-in-out; /* Transición para abrir/cerrar */
+    color: white; /* Texto blanco */
+    padding-top: 20px; /* Relleno superior */
+    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+}
+
+fieldset{
+    width: 100%;
+}
+
+/* Clase para cuando el menú está abierto */
+.menu-lateral.open {
+    right: 0; /* Hace visible el menú */
+}
+
+/* Estilo para la sección de perfil en el menú lateral */
+.perfil {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+/* Estilo para la imagen de perfil */
+.perfil-img {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+    border-radius: 50%; /* Bordes redondeados */
+    object-fit: cover; /* Recorte de la imagen para ajustarse */
+    border: 2px solid white; /* Borde blanco */
+}
+
+/* Estilo para la lista de menú en el menú lateral */
+.menu-list {
+    list-style-type: none; /* Elimina los puntos de la lista */
+}
+
+/* Estilo para cada elemento de la lista en el menú lateral */
+.menu-list li {
+    margin: 20px 0; /* Espaciado entre elementos */
+    text-align: center; /* Centrado del texto */
+}
+
+/* Estilo para los enlaces dentro de la lista del menú lateral */
+.menu-list a , button{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-decoration: none; /* Elimina subrayado */
+    color: white; /* Texto blanco */
+    font-size: 20px; /* Tamaño de fuente ajustado */
+    font-family: 'arcade1', sans-serif; /* Usa la fuente 'arcade1' */
+    display: block; /* Bloque de visualización */
+    padding: 10px; /* Relleno interno */
+    transition: background-color 0.3s ease; /* Transición al pasar el cursor */
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+a:visited {
+    color: lightblue;
+}
+
+/* Estilo para los enlaces cuando se pasa el cursor sobre ellos */
+.menu-list a:hover {
+    background-color: #444; /* Fondo gris oscuro al pasar el cursor */
+}

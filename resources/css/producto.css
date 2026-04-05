@@ -1,0 +1,171 @@
+/* Restablece márgenes y rellenos a cero, y asegura un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definición de una fuente personalizada para usar en el sitio */
+@font-face {
+    font-family: 'arcade1'; /* Nombre de la fuente */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta al archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    color: white; /* Establece el color del texto a blanco */
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con un gradiente oscuro */
+}
+
+/* Estilo para el título h1 */
+h1 {
+    margin: 0; /* Elimina márgenes por defecto */
+    font-size: 24px; /* Tamaño de la fuente */
+}
+
+/* Estilo para el ícono de perfil */
+.profile-icon {
+    border: 1 solid black; /* Borde alrededor del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el ícono */
+}
+
+.profile-icon i {
+    color: #ffffff; /* Color blanco para el ícono */
+}
+
+/* Estilo para el ícono del menú */
+.menu-icon {
+    border: 1 solid black; /* Borde alrededor del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el ícono */
+}
+
+/* Estilo para el menú con cuadrícula */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /* 2 columnas de igual tamaño */
+    padding: 10px;
+    grid-column-gap: 20px; /* Espacio entre las columnas */
+}
+
+/* Estilo para el contenido principal */
+#content {
+    display: grid; 
+    grid-template-rows: 10% 70% 20%; /* Define el tamaño de las filas */
+    grid-template-columns: 30% 40% 30%; /* Define el tamaño de las columnas */
+    margin: 20px; /* Margen alrededor del contenido */
+}
+
+/* Estilo para la imagen del producto */
+#divImg {
+    grid-column: 1; /* Coloca el elemento en la primera columna */
+    grid-row-start: 1;
+    grid-row-end: 4; /* Abarca las tres filas */
+    border: 2px solid white; /* Borde blanco alrededor de la imagen */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    height: 100%; /* Altura completa */
+    width: 80%; /* Ancho del 80% */
+}
+
+/* Estilo para la imagen del producto */
+#imgProd {
+    height: 350px; /* Altura fija para la imagen */
+    width: 100%; /* Ancho completo */
+    border-radius: 20px; /* Bordes redondeados */
+    object-fit: contain;
+}
+
+/* Estilo para el título en la cuadrícula */
+h1 {
+    font-family: 'arcade1'; /* Usa la fuente arcade1 */
+    grid-column-start: 2; /* Coloca el título en la columna 2 */
+    grid-column-end: 4; /* Abarca las columnas 2 y 3 */
+    grid-row: 1; /* Coloca el título en la primera fila */
+}
+
+/* Estilo para la descripción del producto */
+#divDesc {
+    font-family: 'Tahoma'; /* Usa la fuente Tahoma */
+    grid-column-start: 2; /* Coloca la descripción en la columna 2 */
+    grid-column-end: 3; /* Abarca solo la columna 2 */
+    grid-row: 2; /* Coloca la descripción en la segunda fila */
+    overflow: auto; /* Asegura que el contenido se desborde si es necesario */
+}
+
+/* Estilo para la tabla de pujas */
+#tabPuja {
+    grid-column-start: 3; /* Coloca la tabla en la columna 3 */
+    grid-column-end: 4; /* Abarca solo la columna 3 */
+    grid-row: 2; /* Coloca la tabla en la segunda fila */
+    height: 50%; /* Altura del 50% */
+    font-family: 'Tahoma'; /* Fuente Tahoma */
+    border: none; /* Sin bordes */
+}
+
+/* Estilo para las celdas de la tabla */
+#tabPuja tr, td, th {
+    border-width: 2px; /* Bordes de las celdas */
+    border-color: white; /* Color blanco para los bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    text-align: center; /*Centra los textos de la tabla*/
+}
+
+/* Estilo para el botón de pago */
+#btnPagar,span{
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    font-family: 'arcade1'; /* Usa la fuente arcade1 */
+    font-size: 40px; /* Tamaño de la fuente */
+    border-radius: 20px; /* Bordes redondeados */
+    grid-row: 3; /* Coloca el botón en la tercera fila */
+    grid-column: 2; /* Coloca el botón en la columna 2 */
+    width: 50%; /* Ancho del 50% */
+}
+
+span{
+    text-align: center;
+    padding-top: 6px;
+    background-color: transparent;
+}
+
+#divPagar{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilo para el precio actual */
+#precioActual {
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    font-family: 'arcade1'; /* Fuente arcade1 */
+    font-size: 40px; /* Tamaño de la fuente */
+    border-radius: 20px; /* Bordes redondeados */
+    text-align: center; /* Alinea el texto al centro */
+    width: 40%; /* Ancho del 40% */
+    grid-row: 3; /* Coloca el precio en la tercera fila */
+    grid-column: 3; /* Coloca el precio en la columna 3 */
+}
+
+input{
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    font-family: 'arcade1'; /* Fuente arcade1 */
+    font-size: 40px; /* Tamaño de la fuente */
+    width: 200px;
+    text-align: center;
+    border-radius: 20px; /* Bordes redondeados */
+
+}
+
+/* Estilos para el pie de página */
+#pie {
+    position: absolute; /* Posición fija en la parte inferior */
+    bottom: 0px; /* Colócalo en el fondo de la página */
+    width: 100%; /* Ancho completo */
+}

@@ -1,0 +1,251 @@
+/* Restablece márgenes, rellenos y establece un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define una fuente personalizada llamada 'arcade1' con un archivo TTF */
+@font-face {
+    font-family: 'arcade1'; /* Nombre que usarás en el CSS */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta al archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+#confPedido{
+    height: 20vh;
+}
+
+/* Estilo para el cuerpo de la página */
+body {
+    color: white; /* Texto blanco */
+    font-family: 'Tahoma'; /* Fuente principal para el cuerpo */
+    font-weight: bold; /* Texto en negrita */
+    display: flex;
+    flex-direction: column; /* Diseño en columna */
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+}
+
+a:visited{
+    color: white;
+}
+/* Estilo para el título dentro del encabezado */
+h1 {
+    margin: 0;
+    font-family: 'arcade1'; /* Usa la fuente 'arcade1' */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el ícono del menú */
+.menu-icon {
+    border: 1 solid black; /* Borde negro */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Aparece como cursor de puntero */
+    margin-left: 10px;
+}
+
+/* Estilo para el menú principal */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    padding: 10px;
+}
+
+/* Estilo para el contenedor de contenido principal */
+#contenido {
+    display: grid;
+    grid-template-columns: repeat(2, 50%); /* Dos columnas iguales */
+    grid-template-rows: repeat(2, 1fr); /* Dos filas iguales */
+}
+
+/* Estilo para el contenedor de datos */
+#divDatos {
+    grid-column: 1; /* Ocupa la primera columna */
+    grid-row-start: 1; /* Comienza en la primera fila */
+    grid-row-end: 3; /* Ocupa hasta la tercera fila */
+    height: 70vh; /* Altura ajustada */
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: black; /* Fondo negro */
+    justify-self: unset;
+    align-content: center;
+    padding-left: 20px;
+}
+
+/* Estilo para las imágenes dentro de #divDatos */
+#divDatos img {
+    border-radius: 20px; /* Bordes redondeados */
+    border-width: 1px; /* Borde fino */
+    border-color: white; /* Borde blanco */
+    height: 25%;
+    width: 25%;
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilo para los datos dentro de #divDatos */
+#divDatos #datos {
+    font-family: 'Tahoma'; /* Fuente Tahoma */
+    font-weight: bold; /* Texto en negrita */
+    width: 100%;
+    height: 100%;
+    line-height: 30px; /* Espaciado entre líneas */
+}
+
+/* Estilo para el contenedor de ventas */
+#divVentas {
+    grid-column: 2; /* Ocupa la segunda columna */
+    grid-row: 1; /* Ocupa la primera fila */
+    padding: 20px;
+    height: 30vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: black;
+}
+
+.enlacePedidos{
+    align-self: center;
+    font-family: 'arcade1';
+    margin-bottom: 20px;
+    background-color: black;
+    width: 250px;
+    text-align: center;
+}
+
+.enlacePedidos:hover{
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    cursor: pointer;
+}
+
+/* Estilo para el contenedor con desplazamiento horizontal */
+#scroll {
+    display: flex;
+    flex-direction: row; /* Elementos en fila */
+    overflow-x: auto; /* Desplazamiento horizontal */
+    height: 70%;
+}
+
+/* Estilo para las imágenes dentro de #scroll */
+#scroll img,a {
+    height: 70%; /* Altura ajustada */
+    min-width: 100px; /* Ancho mínimo */
+    object-fit: contain; /* Ajuste de imagen */
+    border-radius: 20px; /* Bordes redondeados */
+    border-color: white;
+    border-width: 2px; /* Borde más grueso */
+    margin-right: 10px; /* Espaciado entre imágenes */
+}
+
+/* Efecto de hover sobre las imágenes dentro de #scroll */
+#scroll img:hover {
+    transform: scale(1.01); /* Aumenta ligeramente el tamaño */
+    cursor: pointer; /* Cambia el cursor al pasar sobre las imágenes */
+}
+
+#scroll > a {
+    width: 20%;
+    height: 100%;
+}
+
+/* Estilo para el contenedor de subastas */
+#divSubastas {
+    grid-column: 2; /* Ocupa la segunda columna */
+    grid-row: 2; /* Ocupa la segunda fila */
+    height: 30vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    padding: 20px;
+}
+
+/* Estilo para el contenedor del carrito */
+#divCarrito {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4; /* Ocupa toda la fila */
+    overflow: hidden;
+    height: 70vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: black;
+    padding-bottom: 50px; /*Padding que evita que el ultimo objeto se corte*/
+}
+
+/* Estilo para la sección del carrito */
+#carrito {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Desplazamiento vertical */
+}
+
+/* Estilo para los productos dentro del carrito */
+.prod {
+    text-align: start;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Elementos en fila */
+    width: 100%;
+    height: 200px;
+    border-top: 2px solid white; /* Borde superior */
+    border-bottom: 2px solid white; /* Borde inferior */
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Estilo para las imágenes dentro de los productos */
+.prod img {
+    height: 150px;
+    min-width: 150px;
+    object-fit: contain;
+    border-radius: 20px; /* Bordes redondeados */
+    border: 2px solid white; /* Borde blanco */
+    margin-right: 20px; /* Espaciado entre imagen y texto */
+}
+
+.delCarrito, .delCarrito form{
+    display: flex;
+    width: 100px;
+    font-family: 'arcade1';
+    justify-content: center;
+    text-align: center;
+}
+.delCarrito  input{
+    color:red;
+    font-family: 'arcade1';
+    font-size: 40px;
+    background-color: transparent;
+    border:none;
+}
+
+/* Estilo para los datos del producto */
+.datosProd {
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+}
+
+/* Estilo para el precio dentro de cada producto */
+.precio {
+    width: 100%;
+    text-align: end; /* Alineación a la derecha */
+}
+
+/* Estilo para los divs dentro del perfil */
+.divsPerfil {
+    border-radius: 20px; /* Bordes redondeados */
+    text-align: center; /* Centrado de texto */
+}

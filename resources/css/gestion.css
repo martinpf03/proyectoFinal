@@ -1,0 +1,96 @@
+/* Restablece márgenes, rellenos y establece un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define una fuente personalizada llamada 'arcade1' con un archivo TTF */
+@font-face {
+    font-family: 'arcade1'; /* Nombre que usarás en el CSS */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta a tu archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:active, a:visited{
+    color: white;
+}
+
+
+
+/* Establece el estilo del cuerpo de la página */
+body {
+    color: white; /* Texto blanco */
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+}
+
+/* Estilo para el título principal */
+h1 {
+    margin: 0; /* Elimina márgenes */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+}
+
+#bandaInicial {
+    font-family: arcade1; /* Fuente arcade1 */
+    height: 15vh; /* Altura del 15% de la pantalla */
+    width: 100%; /* Ancho completo */
+    background-color: black; /* Fondo negro */
+    padding: 20px; /* Espaciado interior */
+}
+
+#content{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+p,h2{
+    font-family: Tahoma;
+}
+
+#btnAdd{
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.imgProd{
+    height: 150px;
+    width: 150px;
+}
+
+.producto{
+    background-color: black;
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+button{
+    width: 40%;
+    border-radius: 20px;
+    margin-top: 10px;
+    color: white;
+    height: 30px;
+    font-family: 'arcade1';
+    font-size: 20px;
+}
+.edit{
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+}
+.del{
+    background-color: rgba(255, 0, 0, 0.26);
+}

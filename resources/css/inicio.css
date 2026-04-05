@@ -1,0 +1,119 @@
+/* Restablece márgenes, rellenos y establece un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define una fuente personalizada llamada 'arcade1' con un archivo TTF */
+@font-face {
+    font-family: 'arcade1'; /* Nombre que usarás en el CSS */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta a tu archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Establece el estilo del cuerpo de la página */
+body {
+    color: white; /* Texto blanco */
+    display: flex;
+    flex-direction: column; /* Diseño en columna */
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+}
+
+/* Estilo para el título principal */
+h1 {
+    margin: 0; /* Elimina márgenes */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+}
+
+/* Estilo para el ícono de perfil */
+.profile-icon {
+    border: 1 solid black; /* Borde negro */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Aparece como cursor de puntero */
+}
+
+.profile-icon i {
+    color: #ffffff; /* Color blanco para el ícono */
+}
+
+/* Estilo para el ícono de menú */
+.menu-icon {
+    border: 1 solid black; /* Borde negro */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Aparece como cursor de puntero */
+}
+
+/* Estilo para el contenedor de menú con diseño en cuadrícula */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    padding: 10px;
+    grid-column-gap: 20px; /* Espaciado entre columnas */
+}
+
+/* Estilo para la sección de bienvenida */
+#bienvenida {
+    font-family: 'arcade1'; /* Usa la fuente 'arcade1' */
+    font-weight: bold; /* Negrita */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 40vh; /* Altura del contenedor */
+    flex-direction: column; /* Dirección en columna */
+}
+
+/* Estilo para la sección de secciones con disposición en cuadrícula */
+#secciones {
+    font-family: 'arcade1', sans-serif; /* Usa la fuente 'arcade1' */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-template-rows: 1fr; /* Una sola fila */
+    height: 50vh; /* Altura de la sección */
+    gap: 20px; /* Espaciado entre elementos */
+    margin-bottom: 10vh; /* Margen inferior */
+}
+
+/* Estilo para cada sección individual */
+.seccion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    padding: 20px; /* Relleno interno */
+}
+
+/* Estilo para el contenedor de ofertas */
+.divsOfertas {
+    display: flex;
+    flex-direction: row; /* Disposición en fila */
+    height: 50vh; /* Altura del contenedor */
+    width: 100%; /* Ancho completo */
+    font-family: 'arcade1'; /* Usa la fuente 'arcade1' */
+    align-content: center; /* Centrado del contenido */
+}
+
+/* Estilo para el título dentro de las ofertas */
+.divsOfertas h1 {
+    margin-left: 20px;
+    align-self: center; /* Centrado vertical */
+    font-size: 40px; /* Tamaño de fuente ajustado */
+}
+
+/* Estilo para las sub-ofertas */
+.subOfertas {
+    margin-left: 10vw; /* Desplazamiento desde la izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado horizontal */
+}
+
+/* Estilo para las imágenes de productos dentro de las ofertas */
+.imgProd {
+    border: 5px solid white; /* Borde blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    height: 50%; /* Altura ajustada */
+    width: 100%; /* Ancho completo */
+}

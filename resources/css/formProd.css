@@ -1,0 +1,128 @@
+/* Fondo general */
+body {
+    background: linear-gradient(180deg, #1b2a4a, #16213a);
+    font-family: 'Courier New', monospace;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma;
+}
+
+/*Para que se muestre el menu en la pagina de formulario producto*/
+#menu{
+    display: flex;
+    width: 50px;
+    justify-content: space-around;
+}
+
+#menu i {
+    width: 30px;
+    height: 30px;
+}
+
+/* Contenedor principal */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Caja del formulario */
+#divForm {
+    background-color: black;
+    padding: 40px;
+    border-radius: 20px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+@font-face {
+    font-family: 'arcade1'; 
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Título */
+#tituloForm h1 {
+    font-family: 'arcade1';
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Inputs y textarea */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Inputs tipo number más pequeños */
+input[type="number"] {
+    width: 200px;
+}
+
+/* Select */
+select {
+    background-color: #e5e5e5;
+}
+
+/* Secciones dinámicas */
+.seccion {
+    margin-top: 15px;
+}
+
+/* Botón */
+input[type="submit"] {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #d9d9d9;
+    color: black;
+    border-radius: 25px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover botón */
+input[type="submit"]:hover {
+    background-color: white;
+    transform: scale(1.03);
+}
+
+/* Inputs más compactos dentro de secciones */
+.seccion input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Checkbox alineado */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+

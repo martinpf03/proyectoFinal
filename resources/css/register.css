@@ -1,0 +1,139 @@
+/* Restablece márgenes, rellenos y establece un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.error{
+    font-family: Tahoma;
+    color: red;
+}
+
+p,button{
+    font-family: Tahoma;
+}
+
+#pie{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;   
+}
+
+/* Define una fuente personalizada llamada 'arcade1' con un archivo TTF */
+@font-face {
+    font-family: 'arcade1'; /* Nombre que usarás en el CSS */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta a tu archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: Tahoma;
+    color: white; /* Texto blanco */
+    display: flex;
+    flex-direction: column; /* Diseño en columna */
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+}
+
+/* Estilo para el título dentro del encabezado */
+header > h1 {
+    margin: 0; /* Elimina márgenes */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+}
+
+h1{
+    font-family: 'arcade1';
+}
+
+/* Estilo para el ícono del menú */
+.menu-icon {
+    border: 1 solid black; /* Borde negro */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Aparece como cursor de puntero */
+}
+
+/* Estilo para el contenedor de menú con diseño en cuadrícula */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    padding: 10px;
+    grid-column-gap: 20px; /* Espaciado entre columnas */
+}
+
+/* Estilo para el formulario de inicio de sesión */
+#loginForm {
+    font-family: 'arcade1'; /* Usa la fuente 'arcade1' */
+    background-color: black; /* Fondo negro */
+    width: 30vw; /* Ancho ajustado */
+    height: 60vh; /* Altura ajustada */
+    align-self: center; /* Centrado en el contenedor */
+    margin: 10vh 10vh; /* Márgenes verticales y horizontales */
+    border-radius: 20px; /* Bordes redondeados */
+    
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    text-align: center; /* Alineación de texto al centro */
+}
+
+/* Estilo para el título del formulario */
+#tituloForm {
+    margin: 10px 10px; /* Márgenes para el título */
+    height: 20%; /* Altura ajustada para el título */
+}
+
+/* Estilo para el contenedor de los campos del formulario */
+#divForm {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    height: 60%; /* Altura ajustada */
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+    align-items: center;
+    text-align: center; /* Centrado horizontal de los elementos */
+}
+
+/* Estilo para los enlaces de la sección inferior del formulario */
+#divEnlaces {
+    margin-top: 50px;
+    display: flex;
+    font-family: 'Tahoma'; /* Fuente Tahoma para los enlaces */
+    align-content: space-between; /* Espaciado entre los elementos */
+    height: 20%; /* Altura ajustada */
+}
+
+/* Estilo para los enlaces dentro del formulario */
+#divEnlaces a {
+    color: white; /* Texto blanco */
+    width: 50%; /* Ancho de cada enlace */
+    text-decoration: none; /* Elimina subrayado */
+}
+
+/* Estilo para los enlaces cuando se pasa el cursor sobre ellos */
+#divEnlaces a:hover {
+    text-decoration: underline; /* Subraya los enlaces al pasar el cursor */
+}
+
+/* Estilo para los campos de texto y contraseña */
+input[type="email"], input[type="password"], input[type="text"] {
+    width: 90%; /* Ancho controlado */
+    height: 20%; /* Altura ajustada */
+    margin-top: 20px; /* Espaciado vertical */
+    border-radius: 20px; /* Bordes redondeados */
+    box-sizing: border-box; /* Para evitar desbordes por padding */
+    
+    text-align: center; /* Centrado del texto dentro del campo */
+    font-family: 'Tahoma'; /* Fuente Tahoma */
+    font-size: large; /* Tamaño de fuente grande */
+}
+
+/* Estilo para el botón de envío del formulario */
+input[type="submit"] {
+    font-family: 'Tahoma'; /* Fuente Tahoma */
+    font-weight: bold; /* Texto en negrita */
+    margin-top: 50px; /* Espaciado superior */
+    border-radius: 20px; /* Bordes redondeados */
+    width: 50%; /* Ancho ajustado */
+    height: 30%; /* Altura ajustada */
+}
+

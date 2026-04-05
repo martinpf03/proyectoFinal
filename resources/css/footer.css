@@ -1,0 +1,40 @@
+/* Estilo para el pie de página */
+#pie {
+    background-color: black; /* Fondo negro */
+    font-family: 'Tahoma'; /* Fuente Tahoma */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-template-rows: repeat(2, 1fr); /* Dos filas iguales */
+}
+
+#policies {
+    grid-row: 1;
+    grid-column: 2; /* Coloca en la segunda columna */
+}
+
+#contact {
+    grid-row: 1;
+    grid-column: 1; /* Coloca en la primera columna */
+}
+
+/* Estilo para los elementos dentro del pie de página */
+.divPie {
+    margin-top: 10px;
+    justify-self: center; /* Centrado horizontal */
+    color: white; /* Texto blanco */
+}
+
+/* Estilo para los enlaces dentro del pie de página */
+.divPie > a {
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Elimina subrayado */
+}
+
+/* Estilo para el texto de copyright */
+#copy {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 4; /* Ocupa todas las columnas */
+    align-self: center; /* Centrado vertical */
+    justify-self: center; /* Centrado horizontal */
+}

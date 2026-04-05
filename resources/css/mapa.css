@@ -1,0 +1,113 @@
+/* Restablece márgenes y rellenos a cero, y asegura un modelo de caja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente personalizada para el estilo arcade */
+@font-face {
+    font-family: 'arcade1'; /* Nombre de la fuente */
+    src: url('../fonts/arcade_ya/ARCADE_I.TTF') format('truetype'); /* Ruta del archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    color: white; /* Texto blanco */
+    font-family: 'Tahoma'; /* Fuente predeterminada */
+    display: flex;
+    flex-direction: column; /* Disposición de los elementos en columna */
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo con gradiente oscuro */
+}
+
+fieldset{
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    height: 80vh;
+}
+
+#video{
+    display: flex;
+    background-color: lightgray;
+    width: 47%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilos para el título h1 */
+h1 {
+    margin: 0; /* Elimina márgenes */
+    font-size: 24px; /* Tamaño de la fuente */
+    font-family: 'arcade1'; /* Fuente arcade1 */
+
+}
+
+h3{
+    font-family: 'arcade1'; /* Fuente arcade1 */
+    font-size: 16px;
+}
+
+legend{
+    font-family: 'arcade1'; /* Fuente arcade1 */
+    font-size: 20px;
+}
+
+
+/* Estilo para el ícono de perfil */
+.profile-icon {
+    border: 1 solid black; /* Borde negro alrededor del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el ícono */
+}
+
+.profile-icon i {
+    color: #ffffff; /* Color blanco para el ícono */
+}
+
+/* Estilo para el ícono de menú */
+.menu-icon {
+    border: 1 solid black; /* Borde alrededor del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el ícono */
+}
+
+/* Estilos para el menú, usando una cuadrícula */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    padding: 10px;
+    grid-column-gap: 20px; /* Espacio entre columnas */
+}
+
+/* Estilo para la banda inicial (header secundario) */
+#bandaInicial {
+    font-family: arcade1;
+    height: 15vh; /* Altura de 15vh */
+    width: 100%; /* Ancho completo */
+    background-color: black; /* Fondo negro */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos para el contenido principal */
+#content {
+    flex: 1; /* Se expande para ocupar el espacio disponible */
+    width: 95%; /* Ancho completo */
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
+}
+
+/* Estilo para las imágenes de los productos */
+.imgProd {
+    height: 60%; /* La imagen ocupa el 60% de la altura del contenedor */
+    width: 100%; /* Ancho completo */
+    border-radius: 20px; /* Bordes redondeados */
+    margin-bottom: 5px; /* Espacio debajo de la imagen */
+    object-fit: contain; /* Mantiene la relación de aspecto de la imagen */
+}
