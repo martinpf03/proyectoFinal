@@ -35,5 +35,9 @@ RUN rm -f bootstrap/cache/*.php
 # Exponer puerto de Render
 EXPOSE 10000
 
+RUN echo "upload_max_filesize=20M" > /usr/local/etc/php/conf.d/uploads.ini
+RUN echo "post_max_size=20M" >> /usr/local/etc/php/conf.d/uploads.ini
+RUN echo "memory_limit=256M" >> /usr/local/etc/php/conf.d/uploads.ini
+
 # Comando de arranque
 CMD php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php -S 0.0.0.0:10000 -t public
