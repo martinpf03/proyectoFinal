@@ -20,7 +20,7 @@ COPY . .
 RUN cp .env.example .env
 
 # Instalar dependencias PHP
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # 🔥 Instalar y compilar frontend (Vite)
 RUN npm install
