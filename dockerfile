@@ -11,10 +11,18 @@ WORKDIR /var/www
 
 COPY . .
 
+# 🔥 Crear .env
+RUN cp .env.example .env
+
+# Instalar Laravel
 RUN composer install --no-dev --optimize-autoloader
 
+# Permisos
 RUN chmod -R 775 storage bootstrap/cache
+
+# Limpiar cache viejo
+RUN rm -f bootstrap/cache/*.php
 
 EXPOSE 10000
 
-CMD php artisan config:clear && php artisan cache:clear && php artisan key:generate --force && php artisan migrate --force && php -S 0.0.0.0:10000 -t public
+CMD php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php -S 0.0.0.0:10000 -t public
