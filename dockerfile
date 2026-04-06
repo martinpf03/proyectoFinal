@@ -16,13 +16,13 @@ WORKDIR /var/www
 # Copiar proyecto
 COPY . .
 
-# 🔥 Crear .env (Laravel lo necesita)
+#  Crear .env (Laravel lo necesita)
 RUN cp .env.example .env
 
 # Instalar dependencias PHP
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# 🔥 Instalar y compilar frontend (Vite)
+#  Instalar y compilar frontend (Vite)
 RUN npm install
 RUN npm run build
 
@@ -35,9 +35,10 @@ RUN rm -f bootstrap/cache/*.php
 # Exponer puerto de Render
 EXPOSE 10000
 
+#  Configuración PHP uploads
 RUN echo "upload_max_filesize=20M" > /usr/local/etc/php/conf.d/uploads.ini
 RUN echo "post_max_size=20M" >> /usr/local/etc/php/conf.d/uploads.ini
 RUN echo "memory_limit=256M" >> /usr/local/etc/php/conf.d/uploads.ini
 
-# Comando de arranque
-CMD php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php -S 0.0.0.0:10000 -t public
+#  Comando de arranque
+CMD php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php -S 0.0.0.0:10000 public/index.php
