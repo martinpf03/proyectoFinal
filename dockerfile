@@ -23,8 +23,8 @@ RUN cp .env.example .env
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # 🔥 Instalar y compilar frontend (Vite)
-RUN npm install
-RUN npm run build
+RUN npm install && npm run build
+RUN ls -la public/build
 
 # Permisos
 RUN chmod -R 775 storage bootstrap/cache
