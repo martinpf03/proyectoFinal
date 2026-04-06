@@ -53,6 +53,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/pedidos', function () {
         return redirect('/app/#/pedidos');
     })->name('pedidos.index');
+    
+    Route::get('/pedidos', function () {
+        return redirect('/app/#/pedidos');
+    })->name('pedidos.index');
+
+    
+    
     Route::get('pedidos/show', [PedidoController::class, 'show'])->name('pedidos.show');
     Route::post('pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
 
@@ -73,6 +80,10 @@ Route::middleware('auth')->group(function () {
 Route::get('juegos', [JuegoController::class, 'index'])->name('juegos');
 
 require __DIR__ . '/auth.php';
+
+Route::get('/app/#/pedidos', function () {
+        return redirect('/app/#/pedidos');
+    })->name('pedidos.index');
 
 Route::get('/app/{any?}', function () {
     return response()->file(public_path('app/index.html'));
