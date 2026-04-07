@@ -16,13 +16,13 @@ WORKDIR /var/www
 # Copiar proyecto
 COPY . .
 
-# 🔥 Crear .env (Laravel lo necesita)
+# Crear .env
 RUN cp .env.example .env
 
 # Instalar dependencias PHP
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# 🔥 Instalar y compilar frontend (Vite)
+# Instalar y compilar frontend (Vite)
 RUN npm install && npm run build
 RUN ls -la public/build
 
@@ -32,13 +32,19 @@ RUN chmod -R 775 storage bootstrap/cache
 # Limpiar caches antiguos
 RUN rm -f bootstrap/cache/*.php
 
-# Exponer puerto de Render
+# Exponer puerto
 EXPOSE 10000
 
-# 🔥 Configuración PHP uploads
+# Configuración PHP uploads
 RUN echo "upload_max_filesize=20M" > /usr/local/etc/php/conf.d/uploads.ini
 RUN echo "post_max_size=20M" >> /usr/local/etc/php/conf.d/uploads.ini
 RUN echo "memory_limit=256M" >> /usr/local/etc/php/conf.d/uploads.ini
 
-# 🔥 Comando de arranque CORREGIDO
-CMD php artisan config:clear && php artisan cache:clear && php artisan view:clear && php artisan route:clear && php artisan migrate --force && php -S 0.0.0.0:10000 -t public server.php
+# Comando de arranque con scheduler en paralelo
+CMD php artisan config:clear && \
+    php artisan cache:clear && \
+    php artisan view:clear && \
+    php artisan route:clear && \
+    php artisan migrate --force && \
+    (while true; do php artisan schedule:run; sleep 60; done) & \
+    php -S 0.0.0.0:10000 -t public server.php
